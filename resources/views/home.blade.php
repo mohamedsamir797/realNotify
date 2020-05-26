@@ -13,9 +13,11 @@
 
                     {{$post->content}}
                 </div>
-                <div>
-
+                @foreach( $post->comments as $comment)
+                <div class="card-footer">
+                      {{ $comment->comment }}
                 </div>
+                @endforeach
                 @if($post->user->id != auth()->id())
                 <form action="{{ route('comments.save',$post->id ) }}" method="post">
                     @csrf

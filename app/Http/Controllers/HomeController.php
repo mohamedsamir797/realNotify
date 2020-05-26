@@ -26,7 +26,6 @@ class HomeController extends Controller
     public function index()
     {
         $posts = Post::get();
-//        return $comments = Comment::get();
         return view('home',compact('posts'));
     }
     public function CommentStore(Request $request,Post $post){
