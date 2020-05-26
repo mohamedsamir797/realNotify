@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Comment;
+use App\Events\NewNotification;
+use App\Notification;
 use App\Post;
 use Illuminate\Http\Request;
 
@@ -29,8 +31,20 @@ class HomeController extends Controller
         return view('home',compact('posts'));
     }
     public function CommentStore(Request $request,Post $post){
-        Comment::create([
+       $comment = Comment::create([
             'user_id' => auth()->id(),
+            'post_id' => $post->id ,
+            'comment' => $request->comment
+        ]);
+        $data = [
+            'user_id'=> auth()->id(),
+            'post_id' => $post->id ,
+            'comment' => $request->comment
+        ];
+        event(new NewNotification($data));
+
+        Notification::create([
+            'user_id'=> auth()->id(),
             'post_id' => $post->id ,
             'comment' => $request->comment
         ]);

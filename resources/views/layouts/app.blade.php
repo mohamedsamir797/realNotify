@@ -57,7 +57,7 @@
                                         <i class="fa fa-bell"> </i>
                                         <span
                                                 class="badge badge-pill badge-default badge-danger badge-default badge-up badge-glow   notif-count"
-                                                data-count="9">9</span>
+                                                data-count="0">0</span>
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
                                         <li class="dropdown-menu-header">
@@ -66,7 +66,7 @@
                                             </h6>
                                         </li>
                                         <li class="scrollable-container ps-container ps-active-y media-list w-100">
-                                            <a href="">
+                                            <a href="/home">
                                                 <div class="media">
                                                     <div class="media-body">
                                                         <h6 class="media-heading text-right ">عنوان الاشعار </h6>
@@ -126,5 +126,6 @@
             cluster: 'mt1'
         });
     </script>
+<script src="{{ asset('js/PusherNotifications.js') }}"></script>
 </body>
 </html>

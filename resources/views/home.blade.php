@@ -7,12 +7,13 @@
             @foreach( $posts as $post)
             <div class="card">
                 <div class="card-header">
-                     {{ $post->title }} By <strong>{{ $post->user->name }} - @if(auth()->id() == $post->user->id) The Owner @endif</strong>
+                     {{ $post->title }} By <strong>{{ $post->user->name }}  @if(auth()->id() == $post->user->id) - The Owner @endif</strong>
                 </div>
                 <div class="card-body">
 
                     {{$post->content}}
                 </div>
+                <h5 class="ml-3">(Comments)</h5>
                 @foreach( $post->comments as $comment)
                 <div class="card-footer">
                       {{ $comment->comment }}
