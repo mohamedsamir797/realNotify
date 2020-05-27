@@ -115,6 +115,7 @@
         <main class="py-4">
             @yield('content')
         </main>
+
     </div>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.0.min.js"></script>
     <script src="https://js.pusher.com/6.0/pusher.min.js"></script>
@@ -127,5 +128,6 @@
         });
     </script>
 <script src="{{ asset('js/PusherNotifications.js') }}"></script>
+    @yield('scripts')
 </body>
 </html>

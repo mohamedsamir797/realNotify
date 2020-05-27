@@ -23,4 +23,6 @@ Route::post('comments/{post}', 'HomeController@CommentStore')->name('comments.sa
 Route::group(['middleware'=>'auth'],function (){
     Route::resource('/products','ProductController');
 
+    Route::get('/get-checkout-id','PaymentProviderController@getCheckoutId')->name('products.checkout');
+
 });
