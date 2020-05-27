@@ -19,3 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('comments/{post}', 'HomeController@CommentStore')->name('comments.save');
+
+Route::group(['middleware'=>'auth'],function (){
+    Route::resource('/products','ProductController');
+
+});
